@@ -409,7 +409,7 @@ async function startRun() {
     const slideStart = listPage + 1;
     for (let i = 0; i < listData.length; i++) {
       const page = slideStart + i;
-      if (page > totalPages) break;
+      if (page > pdfPageCount) break;
       const pct = 35 + Math.round((i / listData.length) * 60);
       prog(pct, `STEP 2：${page}ページ目を照合中... (${i+1}/${listData.length}名)`, listData[i].name || '');
       const v = await getSlideData(page, listData, i);
